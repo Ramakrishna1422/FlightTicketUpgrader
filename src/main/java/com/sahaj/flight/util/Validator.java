@@ -33,7 +33,7 @@ public class Validator {
         return any == null || any.isEmpty();
     }
 
-    public static String getInvalidMessage(FlightTicket flightTicket) {
+    public static String isValidRecord(FlightTicket flightTicket) {
         if(!isValidEmail(flightTicket.getEmail())) return "Email Invalid";
         if(!isValidMobile(flightTicket.getMobile())) return "Mobile Invalid";
         if(!isValidPNR(flightTicket.getPnr())) return "PNR Invalid";

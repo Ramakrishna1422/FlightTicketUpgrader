@@ -32,7 +32,7 @@ public class CSVUtilTest {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream stream = classLoader.getResourceAsStream("input.csv");
         List<FlightTicket> records = csvUtil.getRecords(stream, FlightTicket.class);
-        Assert.assertEquals(6, records.size());
+        Assert.assertEquals(16, records.size());
     }
 
     @Test

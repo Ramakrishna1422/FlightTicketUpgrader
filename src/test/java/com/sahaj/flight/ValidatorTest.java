@@ -29,12 +29,12 @@ public class ValidatorTest {
         Assert.assertEquals(true, Validator.isValidPNR("A1B2CB"));
 
         FlightTicket flightTicket = new FlightTicket();
-        Assert.assertEquals("Email Invalid", Validator.getInvalidMessage(flightTicket));
+        Assert.assertEquals("Email Invalid", Validator.isValidRecord(flightTicket));
 
         flightTicket.setEmail("ramakrishna.koalapti@gmail.com");
-        Assert.assertEquals("Mobile Invalid", Validator.getInvalidMessage(flightTicket));
+        Assert.assertEquals("Mobile Invalid", Validator.isValidRecord(flightTicket));
 
         flightTicket.setMobile("9743016797");
-        Assert.assertEquals("PNR Invalid", Validator.getInvalidMessage(flightTicket));
+        Assert.assertEquals("PNR Invalid", Validator.isValidRecord(flightTicket));
     }
 }

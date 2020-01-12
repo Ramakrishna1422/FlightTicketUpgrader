@@ -21,13 +21,13 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class CSVUtil {
+public class CSVUtil<E> {
 
-    public List<FlightTicket> getRecords(InputStream file, Class cls) throws Exception {
+    public List<E> getRecords(InputStream file, Class cls) throws Exception {
         ColumnPositionMappingStrategy columnPositionMappingStrategy = new ColumnPositionMappingStrategy();
         columnPositionMappingStrategy.setType(cls);
         Reader reader = new InputStreamReader(file);
-        CsvToBean<FlightTicket> csvToBean = new CsvToBeanBuilder(reader)
+        CsvToBean<E> csvToBean = new CsvToBeanBuilder(reader)
                 .withType(cls)
                 .withIgnoreLeadingWhiteSpace(true)
                 .build();

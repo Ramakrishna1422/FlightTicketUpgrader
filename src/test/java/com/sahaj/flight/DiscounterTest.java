@@ -13,18 +13,14 @@ public class DiscounterTest {
 
     @Test
     public void getInvalidMessageTest() throws Exception {
-
-
         Assert.assertEquals(false, Discounter.getApplicableDiscountCode("T").equals("OFFER_25"));
-        Assert.assertEquals(false, Discounter.getApplicableDiscountCode("E").equals("OFFER_25"));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("S").equals(""));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("T").equals(""));
-
-        Assert.assertEquals(false, Discounter.getApplicableDiscountCode("I").equals("OFFER_25"));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("K").equals("OFFER_30"));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("M").equals("OFFER_25"));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("A").equals("OFFER_20"));
-        Assert.assertEquals(true, Discounter.getApplicableDiscountCode("R").equals("OFFER_25"));
-
+        Assert.assertEquals("OFFER_20", Discounter.getApplicableDiscountCode("E"));
+        Assert.assertEquals("", Discounter.getApplicableDiscountCode("S"));
+        Assert.assertEquals("", Discounter.getApplicableDiscountCode("T"));
+        Assert.assertEquals("OFFER_30", Discounter.getApplicableDiscountCode("I"));
+        Assert.assertEquals("OFFER_30", Discounter.getApplicableDiscountCode("K"));
+        Assert.assertEquals("OFFER_25", Discounter.getApplicableDiscountCode("M"));
+        Assert.assertEquals("OFFER_20", Discounter.getApplicableDiscountCode("A"));
+        Assert.assertEquals("OFFER_25", Discounter.getApplicableDiscountCode("R"));
     }
 }
